@@ -1,0 +1,42 @@
+.wrapper ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+.wrapper{
+    width: 100%;
+    height:40px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.link{
+    display:block;
+    width: 100px;
+    height: 25px;
+    padding: 10px;
+    background-color: rgb(9, 26, 156);
+    color: rgb(214, 220, 24);
+    border-radius:5px ;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.05em;   
+    text-decoration: none;
+    text-align: center;
+}
+
+li:not(:last-child){
+    margin-right: 25px;
+}
+.active, .link:hover{
+    background-color: rgb(255, 238, 0);
+    color:blue;
+}
+
+.logo{
+    margin-left: 150px;
+    width: 128px;
+}
