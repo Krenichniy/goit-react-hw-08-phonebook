@@ -1,0 +1,14 @@
+
+.wrapper{
+    width: 100%;
+    height:40px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    margin-left: 150px;
+    width: 128px;
+}
