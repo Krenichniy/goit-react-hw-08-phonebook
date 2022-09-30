@@ -44,12 +44,14 @@ import ContactsList from '../../components/ContactsList/ContactsList';
     });
 
     return ( 
-           < StyledContainer>
-                <h2>Tranding today</h2>
+        < StyledContainer>
+            <h2>Welcome to your personal Phonebook</h2>
+            <p>Please register or login...</p>
+                {/* <h2>Tranding today</h2>
                 <StyledMoviesList >
                     {isLoading && <Loader/> }
                     {movies}
-        </StyledMoviesList>
+        </StyledMoviesList> */}
             {/* <Form />
             <Filter />
             <ContactsList/> */}

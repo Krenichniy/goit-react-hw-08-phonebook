@@ -1,44 +1,22 @@
 import PropTypes from 'prop-types';
 import {Container, Header,FormContainer, LabelContainer, UserInput, StyledBtn } from './Form.styled';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addContact } from 'redux/contacts/conatcts-operations';
+import useForm from '../../helpers/hooks/useForm';
 
 
-const Form = ({onNotValid }) => {
-    const [userName, setName] = useState('');
-    const [userTel, setTel] = useState('');
-    const dispatch = useDispatch();
- 
-
-
-   const handleChange= (event) => {
-        const { name, value } = event.currentTarget;
-        name === 'name' ? setName(value) : setTel(value);
-    }  
-
-  
-    const formValidation = ( event, showMessage)=> {
-        event.preventDefault();
-        const name = userName;
-        const tel = userTel;
-        if (!name || !tel) return showMessage('Please fill all fields');
-        
-        const newContact = { name,tel };
-        dispatch(addContact(newContact));
-        reset();
+const Form = ({ onSubmit }) => {
+    
+     const initialState = {
+        name: '',
+        number:''
     }
-
-    const reset = ()=> {
-        setName('');
-        setTel('');
-    }
+    const {state, handleChange, handleSubmit} = useForm({initialState, onSubmit})
+    const {  name, number } = state;
 
         return (
             <>
             <Container>
                 <Header>Phonebook</Header>
-                <FormContainer onSubmit={(event) => {formValidation(event, onNotValid)}}>
+                <FormContainer onSubmit={handleSubmit}>
                     <LabelContainer >
                         Name
                         <UserInput
@@ -47,7 +25,7 @@ const Form = ({onNotValid }) => {
                             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                             required
-                            value={userName}
+                            value={name}
                             onChange={handleChange} />
                     </LabelContainer>
 
@@ -55,11 +33,11 @@ const Form = ({onNotValid }) => {
                         Phone Number
                         <UserInput
                             type="tel"
-                            name="tel"
+                            name="number"
                             pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}"
                             title="Tel may contain only numbers. For example 654-59-78"
                             required
-                            value={userTel}
+                            value={number}
                             onChange={handleChange} />
                         </LabelContainer>
                         <StyledBtn type='submit'>Add contact</StyledBtn>
@@ -70,6 +48,6 @@ const Form = ({onNotValid }) => {
 }
     
     Form.propTypes = {
-        onNotValid: PropTypes.func.isRequired,
+        onSubmit: PropTypes.func.isRequired,
     };
 export default Form;

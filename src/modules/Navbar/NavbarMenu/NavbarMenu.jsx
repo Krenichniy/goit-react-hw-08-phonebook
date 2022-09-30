@@ -1,19 +1,22 @@
 import { NavLink } from 'react-router-dom';
-import styles from './navbarmenu.module.css'
+import styles from './navbarmenu.module.css';
+import { useSelector } from 'react-redux';
+import { isAuth } from '../../../redux/auth/auth-selectors';
 const getClassName = ({ isActive }) => {
     const className = isActive ? `${styles.link} ${styles.active}`: `${styles.link}`;
     return className;
 }
 const NavbarMenu = () => {
+    const isLoggedIn = useSelector(isAuth);
     return (
-        <div>
-              <ul>
+        <div className={styles.wrapper}>
+              <ul >
                 <li>
                     <NavLink className={getClassName} to='/'>Home</NavLink>
                 </li>
-                <li>
-                    
-                </li>
+                {isLoggedIn && <li>
+                    <NavLink className={getClassName} to='/contacts'>Phonebook</NavLink>
+                </li>}
             </ul>
         </div>
     )

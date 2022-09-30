@@ -5,7 +5,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 export const fetchContacts = createAsyncThunk('contacts/fetch',
     async (_, thunkAPI) => {
         try {
-            const data = await api.fetchAllContacts();
+            const data = await api.getContacts();
             return data
         }
         catch (error) {
@@ -22,7 +22,8 @@ function checkIfContactExist(newContact, contacts) {
         })
 }
 
-export const addContact = createAsyncThunk('contacts/add',
+export const addContact = createAsyncThunk(
+    'contacts/add',
     async (data, thunkAPI) => {
         try {
             const result = await api.addNewContact(data);
@@ -43,9 +44,11 @@ export const addContact = createAsyncThunk('contacts/add',
     }
 ); 
 
-export const removeContact = createAsyncThunk('contacts/remove',
+export const removeContact = createAsyncThunk(
+    'contacts/remove',
     async (id, thunkAPI) => {
         try {
+            api.removeContact(id);
             return id;
         }
         catch (error) {

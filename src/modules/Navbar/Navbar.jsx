@@ -6,7 +6,7 @@ export const Navbar = () => {
     return (
         <div className={styles.wrapper}>
             <Link to='/' className={styles.logo}>
-                <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="logo" />
+                <img src="https://previews.123rf.com/images/alexwhite/alexwhite1304/alexwhite130405542/19302763-phonebook-black-circle-web-glossy-icon.jpg" width='150' height='150' alt="logo" />
             </Link>
             <NavbarMenu/>
             <NavbarAuth/>
