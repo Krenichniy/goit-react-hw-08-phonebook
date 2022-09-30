@@ -5,12 +5,16 @@ export const StyledItem = styled.li`
   justify-content: space-between;
   margin-bottom: 15px;
   color: #fff;
+  margin-right:0 !important;
   &:last-child {
     margin-bottom: 0;
   }
 `;
 
 export const StyledName = styled.span`
+  width: 100px;
+  text-overflow: ellipsis;
+  overflow: hidden;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.15;
