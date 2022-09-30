@@ -5,8 +5,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 export const fetchContacts = createAsyncThunk('contacts/fetch',
     async (_, thunkAPI) => {
         try {
-            const data = await api.getContacts();
-            return data
+            const result = await api.getContacts();
+            return result.data;
         }
         catch (error) {
             return thunkAPI.rejectWithValue(error);
@@ -27,7 +27,7 @@ export const addContact = createAsyncThunk(
     async (data, thunkAPI) => {
         try {
             const result = await api.addNewContact(data);
-            return result;
+            return result.data;
         }
         catch (error) {
             return thunkAPI.rejectWithValue(error);

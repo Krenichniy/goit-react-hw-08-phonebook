@@ -29,7 +29,7 @@ const ContactsList = () => {
              {contacts.length ? contacts.map((el) => (
                  <StyledItem key={el.id}>
                      <StyledName>{el.name}</StyledName>:    
-                     <StyledNumber>{el.tel}</StyledNumber>
+                     <StyledNumber>{el.number}</StyledNumber>
                      <StyledBtn onClick={()=> onRemoveContact(el.id)}>Delete contact</StyledBtn>
                      </StyledItem>)) : <StyledName>Your phonebook is empty</StyledName>}
                 </List>

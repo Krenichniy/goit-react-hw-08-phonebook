@@ -42,7 +42,7 @@ const LoginForm = ({onSubmit }) => {
                             value={password}
                             onChange={handleChange} />
                         </LabelContainer>
-                        <StyledBtn type='submit'>Register</StyledBtn>
+                        <StyledBtn type='submit'>Log in</StyledBtn>
                         </FormContainer>
                     </Container>
                 </>
