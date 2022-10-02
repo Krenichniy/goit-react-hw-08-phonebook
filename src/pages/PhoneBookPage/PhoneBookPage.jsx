@@ -1,7 +1,6 @@
 import Form from '../../components/Form/Form';
 import Filter from '../../components/Filter/Filter';
 import ContactsList from '../../components/ContactsList/ContactsList';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contacts/conatcts-operations';
