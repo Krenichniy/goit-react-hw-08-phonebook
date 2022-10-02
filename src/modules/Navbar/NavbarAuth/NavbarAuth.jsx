@@ -1,15 +1,10 @@
-import styles from './navbar-auth.module.css';
+import styles from '../NavbarMenu/navbarmenu.module.css';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { isAuth } from '../../../redux/auth/auth-selectors';
 const NavbarAuth = () => {
-     const isLoggedIn = useSelector(isAuth);
     return (
-        <div>
-           {!isLoggedIn && <NavLink to='/register'>Register</NavLink>} 
-            |
-             {!isLoggedIn && <NavLink to='/login'>Login</NavLink>} 
-            
+        <div className={styles.nav_container}>
+            <NavLink to='/register' className={styles.link}>Register</NavLink>
+            <NavLink to='/login' className={styles.link}>Login</NavLink>
         </div>
     )
 }

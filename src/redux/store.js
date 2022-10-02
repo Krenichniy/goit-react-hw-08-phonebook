@@ -14,12 +14,6 @@ import contactsReducer from './contacts/contacts-slice';
 import filterReducer from './filters/reducer-filter';
 import authReducer from './auth/auth-slice';
 
-// const rootReducer = combineReducers({
-//   auth:authReducer,
-//   contacts: contactSlice,
-//   filter: filterSlice,
-// });
-
 const persistConfig = {
   key: 'token',
   storage,

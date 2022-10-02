@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { signup, signin, logout, current } from './auth-operations';
+import { signUp, signIn, logOut, current } from './auth-operations';
 
 const initialState = {
     user: {},
@@ -14,47 +14,47 @@ const authSlice = createSlice({
     initialState,
     extraReducers: {
         // signup
-        [signup.pending]: (store) => {
+        [signUp.pending]: (store) => {
             store.loading = true;
             store.error = null;
         },
-        [signup.fulfilled]: (store, {payload}) => {
+        [signUp.fulfilled]: (store, {payload}) => {
             store.loading = false;
             store.user = payload.user;
             store.isLogin = true;
             store.token = payload.token;
         },
-        [signup.rejected]: (store, {payload}) => {
+        [signUp.rejected]: (store, {payload}) => {
             store.loading = false;
             store.error = payload;
         },
         // signin
-         [signin.pending]: (store) => {
+         [signIn.pending]: (store) => {
             store.loading = true;
             store.error = null;
         },
-        [signin.fulfilled]: (store, {payload}) => {
+        [signIn.fulfilled]: (store, {payload}) => {
             store.loading = false;
             store.user = payload.user;
             store.isLogin = true;
             store.token = payload.token;
         },
-        [signin.rejected]: (store, {payload}) => {
+        [signIn.rejected]: (store, {payload}) => {
             store.loading = false;
             store.error = payload;
         },
         // logout
-        [logout.pending]: (store) => {
+        [logOut.pending]: (store) => {
             store.loading = true;
             store.error = null;
         },
-        [logout.fulfilled]: (store) => {
+        [logOut.fulfilled]: (store) => {
             store.loading = false;
             store.user = {};
             store.isLogin = false;
             store.token = '';
         },
-        [logout.rejected]: (store, {payload}) => {
+        [logOut.rejected]: (store, {payload}) => {
             store.loading = false;
             store.error = payload;
         },

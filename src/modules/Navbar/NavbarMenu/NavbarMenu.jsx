@@ -10,10 +10,10 @@ const NavbarMenu = () => {
     const isLoggedIn = useSelector(isAuth);
     return (
         <div className={styles.wrapper}>
-              <ul >
-                <li>
-                    <NavLink className={getClassName} to='/'>Home</NavLink>
-                </li>
+            <ul >
+                  {!isLoggedIn &&    <li>
+                    <NavLink className={getClassName} to='/home'>Home</NavLink>
+                </li>}
                 {isLoggedIn && <li>
                     <NavLink className={getClassName} to='/contacts'>Phonebook</NavLink>
                 </li>}
