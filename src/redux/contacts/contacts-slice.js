@@ -45,7 +45,7 @@ const errorSlice = createSlice({
 
 
 
-export default combineReducers({
+export const contactsReducer = combineReducers({
     items: contactSlice.reducer,
     loader: loaderSlice.reducer,
     error: errorSlice.reducer
