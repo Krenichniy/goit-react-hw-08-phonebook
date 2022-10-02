@@ -1,5 +1,4 @@
 import styles from '../../modules/Navbar/NavbarMenu/navbarmenu.module.css';
-import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { isAuth } from '../../redux/auth/auth-selectors';
 import { logOut } from '../../redux/auth/auth-operations';
