@@ -13,7 +13,7 @@ export const App = () => {
   return (
     <div>
       <Navbar/>
-    <UserRoutes/>
+      <UserRoutes/>
     </div>
   );
 };
